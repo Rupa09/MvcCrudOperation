@@ -1,0 +1,56 @@
+﻿@model  MvcCrudOperation.Context.tb_student
+@{
+    ViewBag.Title = "Student";
+}
+<style>
+    .error {
+        color:red;
+    }
+
+</style>
+@using (Html.BeginForm("AddStudent", "Student"))
+{
+<div class="container">
+
+    <div class="form-group">
+        <label>FirstNAme</label>
+        @Html.ValidationMessageFor(x => x.FirstNAme,"",new { @class = "error" })
+        @Html.TextBoxFor(x => x.FirstNAme, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>LastName</label>
+        @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>FatherName</label>
+        @Html.ValidationMessageFor(x => x.FatherName, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.FatherName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        @Html.ValidationMessageFor(x => x.Email, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>MobileNumber</label>
+        @Html.ValidationMessageFor(x => x.MobileNumber, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.MobileNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = "10" })
+    </div>
+
+    <div class="form-group>"
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Edit" class="btn btn-default" />
+         </div>
+
+
+    </div>
+
+   
+   
+ }
